@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>
+      CoreMap
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.other-links div').bind('click', function(event) {
+          event.preventDefault();
+          var elementUserWants = $(this);
+          $('html, body').stop().animate({
+            scrollTop: $(elementUserWants.attr('href')).offset().top - 130
+          }, 1000);
+        })
+      })
+    </script>
+
+    <script type="text/javascript">
+      function topFunction() {
+        document.body.scrollTo(0,0);
+        document.documentElement.scrollTo(0,0);
+      }
+    </script>
+
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="logo-home cursor" onclick="topFunction()">
+        go to top
+      </div>
+      <div class="other-links">
+        <div class="about-coremap cursor" href="#about-coremap">
+          About Coremap
+        </div>
+        <div class="coremaps-technology cursor" href="#coremaps-technology">
+          Coremap's Technology
+        </div>
+        <div class="coremap-video cursor" href="#coremap-video">
+          Coremap Video
+        </div>
+        <div class="meet-the-team cursor" href="#meet-the-team">
+          Meet the Team
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="about-coremap" class="section">
+        this section will have an 'about-coremap' blurb and have some cool animation
+      </div>
+      <div id="coremaps-technology" class="section">
+        this section will explain what coremap is doing, and hopefully have some data to back it up
+      </div>
+      <div id="coremap-video" class="section">
+        if there's a cool video on youtube, you can add it here so that people can see it!
+      </div>
+      <div id="meet-the-team" class="section">
+        this section will have two pictures: one of Peter, and one of Sarah, when scrolled over they will change to blurbs on each of them
+      </div>
+    </div>
+    <div class="bottom-anchor">
+      this section will have contact/general info on coremap
+    </div>
+  </body>
+</html>
