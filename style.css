@@ -1,37 +1,53 @@
-
 body {
   margin: 0;
   font-size: 30;
+  font-family: sans-serif;
+  background: url(CoreMap-Pattern-Small-Blue.png);
+  background-attachment: fixed;
 }
 
 .nav-bar {
   position: fixed;
   width: 100%;
-  background-color: purple;
+  background-color: #605F5E;
   height: 130px;
-}
-
-.logo-home {
-  float: left;
   display: inline-block;
 }
+
 .cursor {
+  float: left;
   cursor: pointer;
+  /* height: 80px; */
+  font-size: 20;
+  text-align: center;
+  margin-left: 1%;
+  margin-right: 1%;
 }
+
 .other-links {
   float: right;
-  display: inline-block;
+  width: 30vw;
 }
 
-.logo-home, .other-links {
+.home-link, .other-links {
   margin-top: 1%;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding: 10px 10px;
+}
+
+.other-links{
+  margin-right: 7%;
+}
+
+.home-link {
+  margin-left: 7%;
+}
+
+.section-link {
+  float: right;
 }
 
 .content {
   padding-top: 130px;
-  background-color: cyan;
 }
 
 .section {
@@ -41,9 +57,10 @@ body {
   border: solid;
   border-width: 5px;
   border-color: black;
+  background-color: #033049;
+  opacity: 100%;
 }
 
 .bottom-anchor {
-  color: white;
   background-color: grey;
 }

@@ -14,7 +14,7 @@
           var elementUserWants = $(this);
           $('html, body').stop().animate({
             scrollTop: $(elementUserWants.attr('href')).offset().top - 130
-          }, 1000);
+          }, 300);
         })
       })
     </script>
@@ -29,21 +29,21 @@
   </head>
   <body>
     <div class="nav-bar">
-      <div class="logo-home cursor" onclick="topFunction()">
+      <div class="home-link link-container cursor" onclick="topFunction()">
         go to top
       </div>
-      <div class="other-links">
-        <div class="about-coremap cursor" href="#about-coremap">
-          About Coremap
+      <div class="other-links link-container">
+        <div class="section-link meet-the-team cursor" href="#meet-the-team">
+          Meet the Team
         </div>
-        <div class="coremaps-technology cursor" href="#coremaps-technology">
-          Coremap's Technology
-        </div>
-        <div class="coremap-video cursor" href="#coremap-video">
+        <div class="section-link coremap-video cursor" href="#coremap-video">
           Coremap Video
         </div>
-        <div class="meet-the-team cursor" href="#meet-the-team">
-          Meet the Team
+        <div class="section-link coremaps-technology cursor" href="#coremaps-technology">
+          Technology
+        </div>
+        <div class="section-link about-coremap cursor" href="#about-coremap">
+          About Coremap
         </div>
       </div>
     </div>
