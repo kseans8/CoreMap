@@ -25,6 +25,45 @@
         document.documentElement.scrollTo(0,0);
       }
     </script>
+    <script type="text/javascript">
+
+    var isInViewport = function (elem) {
+      var distance = elem.getBoundingClientRect();
+      return (
+        distance.top >= 0 &&
+        distance.left >= 0 &&
+        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+      };
+      // TODO: fade out element once it is out of the viewport
+      var isNotInViewport = function (elem) {
+        var distance = elem.getBoundingClientRect();
+        return (
+          distance.top < 0 &&
+          distance.left < 0 &&
+          distance.bottom > (window.innerHeight || document.documentElement.clientHeight) &&
+          distance.right > (window.innerWidth || document.documentElement.clientWidth)
+        );
+        };
+
+      $(document).ready(function() {
+        $(window).scroll( function(){
+          $('.fade-me').each( function(i){
+            console.log
+            var thisElement = $(this)[0];
+
+            if(isInViewport(thisElement)) {
+              $(this).animate({'opacity':'1'},500);
+            }
+            // TODO: fade out element once it is out of the viewport
+            if(isNotInViewport(thisElement)) {
+              $(this).animate({'opacity':'0'},500);
+            }
+          });
+        });
+      });
+    </script>
 
   </head>
   <body>
@@ -49,16 +88,50 @@
     </div>
 
     <div class="content">
+      <div id='coremap-logo' class="section">
+        buffer
+      </div>
       <div id="about-coremap" class="section">
-        this section will have an 'about-coremap' blurb and have some cool animation
+        <div id='coremap-history' class='fade-me'>
+          Founded somewhere between 1950 and 2050 coremap has already saved 300
+          million lives, and is projected to save another 100 million lives in
+          2020. This technology was discovered when a stray cat (presumably)
+          left a unicorn horn on Peter's doorstep. Grinding the horn produced a
+          very potent dust that cures all ailments, so we decided to reproduce
+          it (using both witchcracf and science) and fight AF!
+        </div>
+        <div id="mission-statement" class='fade-me'>
+          Commercialize an ultra-high resolution EP Mapping System to enable
+          patient specific curative ablation for Atrial Fibrillation.
+        </div>
       </div>
       <div id="coremaps-technology" class="section">
-        this section will explain what coremap is doing, and hopefully have some data to back it up
+        <div class='fade-me'>
+          CoreMap is developing an AF mapping catheter and software to identify
+          the mechanism(s) and location(s) driving persistent AF. While there is
+          general agreement that patients with persistent AF require pulmonary
+          vein isolation (and that PVI alone is insufficient to preclude
+          fibrillation), there is little agreement about what strategy is
+          appropriate to further modify the atria’s capacity to support
+          fibrillation. It is unlikely that a single mechanism is responsible
+          for fibrillation in all patients. <br><br>We believe there are two main
+          hurdles which preclude useful mapping of AF in humans: 1) inadequate
+          spatial resolution (resulting in fractionated electrograms and
+          ambiguous local activation time) and 2) inadequate sample density.
+        </div>
       </div>
       <div id="coremap-video" class="section">
         if there's a cool video on youtube, you can add it here so that people can see it!
       </div>
       <div id="meet-the-team" class="section">
+        <!-- company team (2) -->
+        <div class="sarah-title">
+
+        </div>
+        <div class="peter-title">
+
+        </div>
+        <!-- advisors (5) -->
         this section will have two pictures: one of Peter, and one of Sarah, when scrolled over they will change to blurbs on each of them
       </div>
     </div>

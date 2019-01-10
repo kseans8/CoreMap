@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-size: 30;
   font-family: sans-serif;
-  background: url(CoreMap-Pattern-Small-Blue.png);
+  color: white;
+  background: url(CoreMap-Pattern-Large-Orange.png);
   background-attachment: fixed;
 }
 
@@ -12,6 +12,7 @@ body {
   background-color: #605F5E;
   height: 130px;
   display: inline-block;
+  z-index: 1;
 }
 
 .cursor {
@@ -54,11 +55,18 @@ body {
   height: 100vh;
   margin-left: 7%;
   margin-right: 7%;
+  padding: 1% 10%;
+  font-size: 26;
+  background-color: #033049;
+  opacity: 0.6;
+
   border: solid;
   border-width: 5px;
   border-color: black;
-  background-color: #033049;
-  opacity: 100%;
+}
+
+.fade-me {
+  opacity: 0;
 }
 
 .bottom-anchor {
